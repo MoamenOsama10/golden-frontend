@@ -1,5 +1,9 @@
 import { useEffect, useMemo, useRef, useState } from "react";
-
+import { Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import About from "./pages/About";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import ContactUs from "./pages/ContactUs";
 // =====================================================================================
 // ⚙️ Backend connection
 // Local ASP.NET API from Golden-Api/Properties/launchSettings.json
@@ -1764,9 +1768,17 @@ export default function GoldenLanding() {
           })}
         </div>
 
-        <footer>
-          {t.disclaimer} · {t.brand} © 2026
-        </footer>
+       <footer>
+  <div>
+    {t.disclaimer} · {t.brand} © 2026
+  </div>
+
+  <div className="footer-links">
+    <Link to="/about-us">About Us</Link>
+    <Link to="/privacy-policy">Privacy Policy</Link>
+    <Link to="/contact-us">Contact Us</Link>
+  </div>
+</footer>
       </div>
 
       {aboutOpen && (
